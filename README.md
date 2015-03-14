@@ -43,8 +43,8 @@ Grundsätzlicher Aufbau/Syntax eines Kommentars
  * Kurz-Beschreibung im Doxygen Kommentar Format
  * 
  * Ausführliche Beschreibung, die detailiert die Aufgabe des Codes erklärt.
- * Links und Beispiel Markup sind oft hilfreich oder gar notwendig.
- * versehen (Bsp. `.example`).
+ * Links und Beispiel Markup sind oft hilfreich oder gar notwendig. Variablen
+ * oder/und Klassennamen werden mit Backticks versehen (Bsp. `.example`).
  *
  * Example HTML:
  *
