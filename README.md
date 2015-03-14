@@ -38,7 +38,7 @@ Die Art der Schreibweise von Kommentaren richtet sich danach, ob der kommentiert
 
 Grundsätzlicher Aufbau/Syntax eines Kommentars
 
-```
+```css
 /**
  * Kurz-Beschreibung im Doxygen Kommentar Format
  * 
@@ -57,7 +57,7 @@ Grundsätzlicher Aufbau/Syntax eines Kommentars
 
 Ist es sinnvoll einzelne Deklarationen zu erklären, werden sie wie folgt notiert.
 
-```
+```css
 /**
  * Kurz-Beschreibung
  * 
