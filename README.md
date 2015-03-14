@@ -27,7 +27,7 @@ Um den Code-Stil konsistent zu halten wird die Datei `.editorconfig` von allen T
 
 Gut dokumentierter Code ist extrem wichtig. Beschreibe so ausführlich wie notwendig deinen Code, so dass andere verstehen können, was der Code kann und was ggf. nicht.
 
-Grundsätzliches zu Kommentaren:
+Grundsätzlichee Regeln:
 
 + Kommentare werden auf **English** verfasst.
 + Kommentare werden in ganzen, beschreibenden Sätzen und korrekter Interpunktion verfasst.
@@ -42,9 +42,10 @@ Grundsätzlicher Aufbau/Syntax eines Kommentars
 /**
  * Kurz-Beschreibung im Doxygen Kommentar Format
  * 
- * Ausführliche Beschreibung, die detailiert die Aufgabe des Codes erklärt.
- * Links und Beispiel Markup sind oft hilfreich oder gar notwendig. Variablen
- * oder/und Klassennamen werden mit Backticks versehen (Bsp. `.example`).
+ * Ausführliche Beschreibung, die detailiert die Aufgabe des Codes
+ * erklärt. Links und Beispiel Markup sind oft hilfreich oder gar
+ * notwendig. Variablen oder/und Klassennamen werden mit Backticks
+ * versehen (Bsp. `.example`).
  *
  * Example HTML:
  *
@@ -61,13 +62,12 @@ Ist es sinnvoll einzelne Deklarationen zu erklären, werden sie wie folgt notier
 /**
  * Kurz-Beschreibung
  * 
- * Ausführliche Beschreibung. Klassennamen/Variablen) innerhalb der
- * Kommentare werden mit Backticks geschrieben.
+ * Ausführliche Beschreibung. Variablen oder/und Klassennamen
+ * werden mit Backticks versehen (Bsp. `.example`).
  *
  * 1. Remove list style and padding/margin
  * 2. Reset font size inherited from `.example`
  */
-
 .example {
     list-style: none;
     padding: 0; /* 1 */
