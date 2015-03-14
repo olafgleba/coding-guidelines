@@ -2,9 +2,7 @@
 
 **TOC**:
 
----
-
-1. [**Grundsätze**](#markdown-header-allgemeine-prinzipien)
+1. [**Allgemeine Prinzipien**](#markdown-header-allgemeine-prinzipien)
 2. [**Editoreinstellungen**](#markdown-header-editoreinstellungen)
 3. [**Kommentare**](#markdown-header-kommentare)
 
@@ -14,7 +12,7 @@
 
 + Alle Regeln und Vorgaben dieses Guides sind verbindlich für alle  beteiligten Entwickler.
 + Code sollte so aussehen, als wenn ihn ein einzelner Entwickler geschrieben hat. Auch wenn ggf. viele daran mitgewirkt haben.
-+ Falls ihr euch unsicher seid wie etwas zu machen ist oder eine noch hier noch nicht aufgeführtes Problem auftritt, sprecht die Kollegen an.
++ Falls ihr euch unsicher seid wie etwas zu machen ist oder ein hier noch nicht aufgeführtes Problem auftritt, sprecht euch mit den Kollegen ab.
 
 ## 2. Editoreinstellungen ##
 
@@ -23,7 +21,7 @@
 + Vermische *niemals* einfache Leerzeichen mit Tabs.
 + Die maximale Zeilenlänge wird auf **80** Zeichen festgelegt.
 
-Um den Code-Stil konsistent zu halten wird die Datei `.editorconfig` (versteckte Datei, liegt im [Root](https://bitbucket.org/autrado/autrado-frontend-development/src/)) von allen Teammitgliedern eingesetzt/genutzt. Diese enthält einige Voreinstellungen für Text-Editoren, so dass gewährleistet ist, dass alle Teammitglieder mit der gleichen Konfiguration arbeiten. Damit der Texteditor eurer Wahl die Datei (`.editorconfig`) versteht, müsst ihr für euren Texteditor ein Plugin installieren ([EditorConfig Plugin Downloads](http://editorconfig.org/#download)).
+Um den Code-Stil konsistent zu halten wird die Datei `.editorconfig` von allen Teammitgliedern eingesetzt/genutzt. Diese enthält einige Voreinstellungen für Text-Editoren, so dass gewährleistet ist, dass alle Teammitglieder mit der gleichen Konfiguration arbeiten. Damit der Texteditor eurer Wahl die Datei (`.editorconfig`) versteht, müsst ihr für euren Texteditor ein Plugin installieren ([EditorConfig Plugin Downloads](http://editorconfig.org/#download)).
 
 ## 3. Kommentare ##
 
