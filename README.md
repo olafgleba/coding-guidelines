@@ -1,7 +1,5 @@
 # Coding Guidelines #
 
----
-
 **TOC**:
 
 ---
