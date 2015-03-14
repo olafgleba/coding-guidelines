@@ -12,7 +12,7 @@
 
 + Alle Regeln und Vorgaben dieses Guides sind verbindlich für alle  beteiligten Entwickler.
 + Code sollte so aussehen, als wenn ihn ein einzelner Entwickler geschrieben hat. Auch wenn ggf. viele daran mitgewirkt haben.
-+ Falls ihr euch unsicher seid wie etwas zu machen ist oder ein hier noch nicht aufgeführtes Problem auftritt, sprecht euch mit den Kollegen ab.
++ Falls ihr euch unsicher seid wie etwas zu deklarieren ist oder ein in diesen Guidelines noch nicht aufgeführtes Problem auftritt, sprecht euch mit den Kollegen ab und führt dieses in diesem Dokument nach.
 
 ## 2. Editoreinstellungen ##
 
