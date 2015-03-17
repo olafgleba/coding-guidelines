@@ -45,7 +45,7 @@ Grundsätzliche Regeln:
 + Kommentare werden in ganzen, beschreibenden Sätzen und korrekter Interpunktion verfasst.
 + Kommentare werden *immer* oberhalb des dokumentierten Codes plaziert
 + Zwischen Kommentar und dokumentierten Code wird **1** Leerzeile gesetzt.
-+ Zwischen Code und einem nachfolgenden/nächsten Kommentar werden **2** Leerzeilen gesetzt.
++ Ganze Kommentar/Code Blocks werden durch **2** Leerzeilen voneinander abgesetzt.
 
 ### Arten von Kommentaren ###
 
