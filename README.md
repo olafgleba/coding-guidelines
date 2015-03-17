@@ -108,10 +108,16 @@ Ist es sinnvoll/notwendig einzelne Deklarationen zu erklären, werden sie wie im
 }
 ```
 
+Oftmals ist eine ausführliche Dokumentation einer Deklaration nicht notwendig, sondern verdeutlich nur den Kontext des Codes.
+
 Beispiel eines einfachen Kommentars:
 
 ```css
-/* Einzeilige Kurzbeschreibung */
+/* Status Klasse für Slider  */
+
+.slider.is-hidden { 
+	display: none;
+}
 ```
 
 
@@ -161,12 +167,14 @@ input[type="text"] {
 
 Ausnahmen:
 
-+ Besteht die Deklaration aus lediglich eines Attribut/Werte-Paars, werden Selektor, geschweifte Klammer und die Attribut/Werte Deklaration in **1** Zeile notiert. Geschweifte Klammern und Deklaration werden durch einen Leerschritt voneinander abgesetzt.
++ Besteht die Deklaration aus lediglich eines Attribut/Werte-Paars **und** ist Teil einer zusammenhängenden Gruppe von Deklaration, werden Selektor, geschweifte Klammer und die Attribut/Werte Deklaration jeweils in **1** Zeile notiert. Geschweifte Klammern und Deklaration werden durch einen Leerschritt voneinander abgesetzt.
 
 Beispiel der oben genannten Regeln:
 
 ```css
-.selektor { text-align: right; }
+.u-text-align--left { text-align: left; }
+.u-text-align--right { text-align: right; }
+.u-text-align--center { text-align: center; }
 ```
 
 
