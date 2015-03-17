@@ -103,7 +103,7 @@ Ist es sinnvoll/notwendig einzelne Deklarationen zu erklären, werden sie wie im
     margin: 0; /* 1 */
 
     li {
-        font-size: 1 rem; /* 2 */
+        font-size: 1rem; /* 2 */
     }
 }
 ```
