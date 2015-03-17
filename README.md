@@ -167,7 +167,7 @@ input[type="text"] {
 
 Ausnahmen:
 
-+ Besteht die Deklaration aus lediglich eines Attribut/Werte-Paars **und** ist Teil einer zusammenhängenden Gruppe von Deklaration, werden Selektor, geschweifte Klammer und die Attribut/Werte Deklaration jeweils in **1** Zeile notiert. Geschweifte Klammern und Deklaration werden durch einen Leerschritt voneinander abgesetzt.
++ Besteht die Deklaration aus lediglich eines Attribut/Werte-Paars **und** ist Teil einer zusammenhängenden Gruppe von Deklarationen, werden Selektor, geschweifte Klammer und die Attribut/Werte Deklaration jeweils in **1** Zeile notiert. Geschweifte Klammern und Deklaration werden durch einen Leerschritt voneinander abgesetzt.
 
 Beispiel der oben genannten Regeln:
 
