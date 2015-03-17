@@ -108,7 +108,7 @@ Ist es sinnvoll/notwendig einzelne Deklarationen zu erklären, werden sie wie im
 }
 ```
 
-Oftmals ist eine ausführliche Kemmentierung einer Deklaration nicht notwendig, sondern verdeutlich nur den Kontext des Codes. In diesem Fall wird ein einzeiliger Kommentar verwendet.
+Oftmals ist eine ausführliche Kemmentierung einer Deklaration nicht notwendig, sondern verdeutlich nur den Kontext des Codes. In dem Fall wird ein einzeiliger Kommentar verwendet.
 
 Beispiel eines einfachen Kommentars:
 
