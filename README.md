@@ -2,17 +2,20 @@
 
 **TOC**:
 
-1. [Allgemeine Prinzipien](#allgemeine-prinzipien)
+1. [Prämisse](#praemisse)
 2. [Editoreinstellungen](#editoreinstellungen)
-3. [Kommentare - CSS/SCSS](#kommentare-scss)
-4. [Format - CSS/SCSS](#format-cssscss)
-5. [Format - SCSS](#format-scss)
+3. [Kommentare](#kommentare)
+    - [CSS](#kommentare-css)
+    - [HTML/Markup](#kommentare-markup)
+4. [Format](#format)
+    - [CSS](#format-css)
+    - [HTML/Markup](#format-markup)
 
 ---
 
 
-<a name="allgemeine-prinzipien"></a>
-## 1. Allgemeine Prinzipien ##
+<a name="praemisse"></a>
+## 1. Prämisse ##
 
 + Alle Regeln und Vorgaben dieses Guides sind verbindlich für alle  beteiligten Entwickler.
 + Ist nicht eindeutig, wie etwas zu deklarieren ist, sollte Rücksprache mit den Teammitgliedern gehalten bevor die Deklaration erfolgt.
@@ -21,12 +24,14 @@
 <a name="editoreinstellungen"></a>
 ## 2. Editoreinstellungen ##
 
+Die (meisten) Einstellungen gelten übergreifend für CSS wie auch HTML/Markup.
+
 Grundsätzliche Einstellungen:
 
 + Für Einrückungen werden (Hard) **Tabs** genutzt.
 + Die Zeichenweite der Tabs ist auf **4** gesetzt.
-+ Vermische *niemals* Leerzeichen mit Tabs.
-+ Die maximale Zeilenlänge wird auf **80** Zeichen festgelegt.
++ Vermische *niemals* Leerzeichen mit Tabs. 
++ Die maximale Zeilenlänge wird auf **80** Zeichen begrenzt (*nur CSS*).
 + Deklarationen, die mehr Zeichen in einer Zeile beinhalten, werden *nicht* per Hand umgebrochen.
 
 ### EditorConfig ###
@@ -34,8 +39,8 @@ Grundsätzliche Einstellungen:
 Um den Code-Stil konsistent zu halten wird eine Datei genutzt, die Voreinstellungen für Texteditoren bereitstellt (`.editorconfig`). Dies gewährleistet, dass alle Teammitglieder mit einer identischen Konfiguration arbeiten und die Ansicht des Codes konsistent in allen Texteditoren bleibt. Damit der jeweilige Texteditor die Konfigurationsdatei interpretieren kann, müssen alle Teammitglieder ein entsprechendes Plugin installieren ([EditorConfig Plugin Downloads](http://editorconfig.org/#download)).
 
 
-<a name="kommentare-scss"></a>
-## 3. Kommentare - CSS/SCSS ##
+<a name="kommentare"></a>
+## 3. Kommentare ##
 
 Gut dokumentierter Code ist extrem wichtig. Beschreibe so ausführlich wie notwendig deinen Code, so dass andere verstehen können, was der Code kann und was ggf. nicht.
 
@@ -43,15 +48,16 @@ Grundsätzliche Regeln:
 
 + Kommentare werden auf **English** verfasst.
 + Kommentare werden in ganzen, beschreibenden Sätzen und korrekter Interpunktion verfasst.
-+ Kommentare werden *immer* oberhalb des dokumentierten Codes plaziert
-+ Zwischen Kommentar und dokumentierten Code wird **1** Leerzeile gesetzt.
++ Kommentare werden *immer* oberhalb des dokumentierten Codes/Markup plaziert
++ Zwischen Kommentar und dokumentierten Code/Markup wird **1** Leerzeile gesetzt.
 + Ganze Kommentar/Code Blocks werden durch **2** Leerzeilen voneinander abgesetzt.
 
-### Arten von Kommentaren ###
+<a name="kommentare-css"></a>
+### CSS ###
 
-Das Format von Kommentaren richtet sich danach, ob der kommentierte Code **allein der Inline Dokumentation** dient oder für die **Dokumentation im Living Style Guide** relevant ist.
+Das Format von Kommentare richtet sich danach, ob der kommentierte Code **allein der Inline Dokumentation** dient oder für die **Dokumentation im Living Style Guide** relevant ist.
 
-### Kommentare für Inline Code Dokumentation ###
+#### Kommentare für Inline Code Dokumentation ####
 
 Kommentare werden im [JavaDoc](https://de.wikipedia.org/wiki/Javadoc) Format notiert.
 
@@ -121,15 +127,40 @@ Beispiel eines einfachen Kommentars:
 ```
 
 
-### Kommentare für die Dokumentation im Living Style Guide ###
+#### Kommentare für die Dokumentation im Living Style Guide ####
 
 Die Dokumentation von Sourcecode, der im Living Style Guide abgebildet werden soll, folgt etwas anderen Regeln. Der Living Style Guide wird mit dem Gem Hologram erstellt, dass bestimmte Konventionen in der Kommentierung erfordert.
 
 *in Arbeit...*
 
 
-<a name="format-cssscss"></a>
-## 4. Format - CSS/SCSS ##
+<a name="kommentare-markup"></a>
+### HTML/Markup ###
+
+Kommentare im Markup sollten generell sparsam verwendet werden, da diese nicht entfernt werden im Deployment und durch korrekte Editoreinstellung (Einzug) i.d.R. schnell erkannt werden kann, wo ein Element beginnt und wo es endet. Für das visuelle Erfassen von Zusammenhängen ist es dennoch sinnvoll, das Ende eines größeren Markup-Blocks durch einen Kommentar auszuzeichnen.
+
++ Ein Kommentar beginnt mit einem Schrägstrich
++ Ist keine Klassendeklaration vorhanden, wird der Tag-Name notiert
++ Hat das Element einen Klassennamen, der es identifierbar macht, wird dieser notiert
+
+```html
+<header>
+    ...
+</header> <!-- /header -->
+
+
+<header class="banner">
+    ...
+</header> <!-- /.banner -->
+```
+
+
+
+<a name="format"></a>
+## 4. Format ##
+
+<a name="format-css"></a>
+### CSS ###
 
 Grundsätzliche Regeln:
 
@@ -179,7 +210,7 @@ Beispiel der oben genannten Regeln:
 
 
 
-### Reihenfolge der Deklarationen
+#### Reihenfolge der Deklarationen ####
 
 Deklarationen werden in Blöcken zusammenhängender Eigenschaften notiert. 
 
@@ -214,12 +245,67 @@ Deklarationen werden in Blöcken zusammenhängender Eigenschaften notiert.
 ```
 
 
+<a name="format-markup"></a>
+### HTML/Markup ###
 
-<a name="format-scss"></a>
-## 5. Format - SCSS ##
+Ein paar wenige Regeln gibt es auch für die Notation von Klassen innerhalb des Markups und Abständen zwischen Markup-Blöcken.
 
-in Arbeit...
++ Der schließende Tag eines HTML-Elementes wird in der gleichen Zeile wie der öffnende Tag notiert.
++ Nach dem öffnenden Tag eines HTML-Elementes werden die Inhalte i.d.R. in einer neuen Zeile begonnen. Ausnahmen sind Elemente, die keine weiteren Elemente enthalten (bspw. `<a>`).
++ Attribute im Markup werden immer in doppelte Anführungszeichen gesetzt.
+```html
+<div class="c-vehicle-list">
+    <ul>
+        <li>
+            <a>...</a>
+        </li>
+    </ul>
+</div>
 
+
+<dl>
+    <dt>Term</dt>
+    <dd>Description</dd>
+
+    <dt>Term</dt>
+    <dd>
+        <span>Description</span>
+    </dd>
+</dl>
+```
+
+
++ Attribute im Markup werden immer in doppelte Anführungszeichen gesetzt.
+```html
+<div class="btn">
+```
+
++ Bei Mehrfachzusweisungen von Attribute, trenne diese mit jeweils **2** Leerschritten. Dies ist sinnvoll, da ab einer bestimmten Zahl an Attributen die Übersichtlichkeit verloren geht.
+```html
+<div class="btn  btn--small  btn--submit">
+```
+
++ Layoutrelevante Markup-Blöcke werden durch **3** Leerzeilen voneinander abgesetzt.
+```html
+<header>
+    ...
+</header>
+
+
+<main>
+    ...
+
+
+    <aside>
+        ...
+    </aside>
+</main>
+
+
+<footer>
+    ...
+</footer>
+```
 
 
 
