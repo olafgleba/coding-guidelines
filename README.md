@@ -2,7 +2,7 @@
 
 **TOC**:
 
-1. [Prämisse](#praemisse)
+1. [Prämissen](#praemisse)
 2. [Editoreinstellungen](#editoreinstellungen)
 3. [Kommentare](#kommentare)
     - [CSS](#kommentare-css)
@@ -15,10 +15,10 @@
 
 
 <a name="praemisse"></a>
-## 1. Prämisse ##
+## 1. Prämissen ##
 
 + Alle Regeln und Vorgaben dieses Guides sind verbindlich für alle  beteiligten Entwickler.
-+ Ist nicht eindeutig, wie etwas zu deklarieren ist, sollte Rücksprache mit den Teammitgliedern gehalten bevor die Deklaration erfolgt.
++ Ist nicht eindeutig, wie etwas zu deklarieren ist, wird Rücksprache mit den Teammitgliedern gehalten.
 
 
 <a name="editoreinstellungen"></a>
@@ -26,13 +26,13 @@
 
 Die (meisten) Einstellungen gelten übergreifend für CSS wie auch HTML/Markup.
 
-Grundsätzliche Einstellungen:
+Grundsätzliche Einstellungen/Regeln:
 
-+ Für Einrückungen werden (Hard) **Tabs** genutzt.
-+ Die Zeichenweite der Tabs ist auf **4** gesetzt.
++ Für Zeileneinzüge werden **Spaces** genutzt.
++ Die Einrückungsweite wird auf **4** gesetzt.
 + Vermische *niemals* Leerzeichen mit Tabs. 
 + Die maximale Zeilenlänge wird auf **80** Zeichen begrenzt (*nur CSS*).
-+ Deklarationen, die mehr Zeichen in einer Zeile beinhalten, werden *nicht* per Hand umgebrochen.
++ Deklarationen, die mehr Zeichen in einer Zeile beinhalten, werden *niemals* per Hand umgebrochen.
 
 ### EditorConfig ###
 
@@ -139,9 +139,9 @@ Die Dokumentation von Sourcecode, der im Living Style Guide abgebildet werden so
 
 Kommentare im Markup sollten generell sparsam verwendet werden, da diese nicht entfernt werden im Deployment und durch korrekte Editoreinstellung (Einzug) i.d.R. schnell erkannt werden kann, wo ein Element beginnt und wo es endet. Für das visuelle Erfassen von Zusammenhängen ist es dennoch sinnvoll, das Ende eines größeren Markup-Blocks durch einen Kommentar auszuzeichnen.
 
-+ Ein Kommentar beginnt mit einem Schrägstrich
-+ Ist keine Klassendeklaration vorhanden, wird der Tag-Name notiert
-+ Hat das Element einen Klassennamen, der es identifierbar macht, wird dieser notiert
++ Ein Kommentar beginnt mit einem Schrägstrich (Synomym für das Ende eines Blocks).
++ Ist keine Klassendeklaration vorhanden, wird der Tag-Name notiert.
++ Hat das Element einen Klassennamen, wird dieser notiert.
 
 ```html
 <header>
@@ -164,10 +164,10 @@ Kommentare im Markup sollten generell sparsam verwendet werden, da diese nicht e
 
 Grundsätzliche Regeln:
 
-+ Eine öffnende geschweifte Klammer wird in der gleichen Zeile wie der Selektor notiert.
++ Eine öffnende geschweifte Klammer wird in der gleichen Zeile wie der selector notiert.
 + Setze einen einfachen Leerschritt zwischen Deklaration und öffenden geschweiften Klammer.
-+ Eine schließende geschweifte Klammer einer Deklaration steht in eigener Zeile und gleichen Spalte wie der öffenende Selektor. 
-+ Jeder Selektor in Selektorketten wird jeder Selektor in einer eigenen Zeile notiert.
++ Eine schließende geschweifte Klammer einer Deklaration steht in eigener Zeile und gleichen Spalte wie der öffenende selector. 
++ Jeder selector in selectorketten wird in einer eigenen Zeile notiert.
 + Jede Deklaration wird mit einem Semikolon abgeschlossen.
 + Setze zwischen Attribut und Wert einer Deklaration ein Leerzeichen (e.g. `margin: 1em`).
 + Nutze ausschließlich HEX Angaben in Farbdeklarationen in der keine Transparenz erforderlich ist.
@@ -182,8 +182,8 @@ Grundsätzliche Regeln:
 Beispiel der oben genannten Regeln:
 
 ```css
-.selektor-1,
-.selektor-2 {
+.selector-1,
+.selector-2 {
     display: block;
     margin: 0; 
     color: #fff;
@@ -196,9 +196,9 @@ input[type="text"] {
 }
 ```
 
-Ausnahmen:
+##### Ausnahme: ######
 
-+ Besteht die Deklaration aus lediglich eines Attribut/Werte-Paars **und** ist Teil einer zusammenhängenden Gruppe von Deklarationen, werden Selektor, geschweifte Klammer und die Attribut/Werte Deklaration jeweils in **1** Zeile notiert. Geschweifte Klammern und Deklaration werden durch einen Leerschritt voneinander abgesetzt.
++ Besteht die Deklaration aus lediglich eines Attribut/Werte-Paars **und** ist Teil einer zusammenhängenden Gruppe von Deklarationen, werden selector, geschweifte Klammer und die Attribut/Werte Deklaration jeweils in **1** Zeile notiert. Geschweifte Klammern und Deklaration werden durch einen Leerschritt voneinander abgesetzt.
 
 Beispiel der oben genannten Regeln:
 
@@ -207,7 +207,6 @@ Beispiel der oben genannten Regeln:
 .u-text-align--right { text-align: right; }
 .u-text-align--center { text-align: center; }
 ```
-
 
 
 #### Reihenfolge der Deklarationen ####
@@ -219,7 +218,7 @@ Deklarationen werden in Blöcken zusammenhängender Eigenschaften notiert.
 + Zwischen den einzelnen Eigenschaftsblöcken wird **1** Leerzeile gesetzt.
 
 ```css
-.selektor {
+.selector {
     /* Positionierung */
     position: relative;
     z-index: 1;
@@ -241,6 +240,40 @@ Deklarationen werden in Blöcken zusammenhängender Eigenschaften notiert.
     font-family: helvetica, arial, sans-serif;
     font-size: inherit;
     text-align: left; 
+}
+```
+
+
+
+#### Präprozessoren ####
+
+Der Einsatz von (hier) SASS erfordert einige weitere Regeln, die verbindlich sind.  
+
++ Vermeide Verschachtelungen wo immer es möglich ist.
++ Verschachtelung (Nesting) wird auf max. **2** Ebenen begrenzt.
++ Verschachtelte Deklaration werden vor und nach der Notation durch **1** Leerzeile von dem umgebenden Code abgesetzt.
+```scss
+.selector {
+    color: red;
+
+    .selector-nested {
+        ...
+    }
+    
+}
+```
+
++ `@extend`, `@include` werden am Anfang einer Deklaration notiert (in dieser Reihenfolge.
++ Notierungen von SASS eigenen Statements (`@`) werden mit **1** Leerzeile von nachfolgenden Deklarationen abgesetzt. 
++ Um Konflikte mit ggf. Dritt-Libraries zu vermeiden, werden eigene Mixins und Funktionen mit einem Namespace-Prefix deklariert (Wahl des Prefix projektabhängig; im Beispiel wird `x-` als Prefix genutzt).
+
+```scss
+.selector {
+    @extend %button;
+    @include font-size(16px);
+
+    width: x-calculate-context(64em);
+    ...
 }
 ```
 
@@ -274,13 +307,7 @@ Ein paar wenige Regeln gibt es auch für die Notation von Klassen innerhalb des 
 </dl>
 ```
 
-
-+ Attribute im Markup werden immer in doppelte Anführungszeichen gesetzt.
-```html
-<div class="btn">
-```
-
-+ Bei Mehrfachzusweisungen von Attribute, trenne diese mit jeweils **2** Leerschritten. Dies ist sinnvoll, da ab einer bestimmten Zahl an Attributen die Übersichtlichkeit verloren geht.
++ Bei Mehrfachzuweisungen von Klassen-Attributen, werden diese mit jeweils **2** Leerschritten voneinander abgesetzt. Dies ist sinnvoll, da ab einer bestimmten Zahl an Attributen die Übersichtlichkeit verloren geht.
 ```html
 <div class="btn  btn--small  btn--submit">
 ```
