@@ -263,7 +263,7 @@ Der Einsatz von (hier) SASS erfordert einige weitere Regeln, die verbindlich sin
 }
 ```
 
-+ `@extend`, `@include` werden am Anfang einer Deklaration notiert (in dieser Reihenfolge.
++ `@extend`, `@include` werden am Anfang einer Deklaration notiert (in dieser Reihenfolge).
 + Notierungen von SASS eigenen Statements (`@`) werden mit **1** Leerzeile von nachfolgenden Deklarationen abgesetzt. 
 + Um Konflikte mit ggf. Dritt-Libraries zu vermeiden, werden eigene Mixins und Funktionen mit einem Namespace-Prefix deklariert (Wahl des Prefix projektabhängig; im Beispiel wird `x-` als Prefix genutzt).
 
