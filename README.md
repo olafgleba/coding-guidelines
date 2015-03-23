@@ -173,10 +173,10 @@ Grundsätzliche Regeln:
 + Nutze ausschließlich HEX Angaben in Farbdeklarationen in der keine Transparenz erforderlich ist.
 + Nutze ausschließlich das RGBA Farbmodell, wenn Transparenzen erforderlich sind. 
 + Nutze durchgehend Kleinschreibung und Shorthand Schreibweise bei HEX Angaben (e.g. `#fff`).
-+ Es werden ausschließlich doppelte Anführungzeichen genutzt.
++ Es werden ausschließlich **doppelte** Anführungzeichen genutzt.
 + Attributewerte werden in Anführungszeichen gesetzt (e.g. `input[type="text")`).
 + Nullwerte werden, soweit valide, ohne Maßeinheiten notiert (e.g. `margin: 0`)
-+ Nach Kommata, die Werte/Eigenschaften separieren, wird ein jeweils ein Leerzeichen gesetzt (e.g. `font-family: helvetica, arial, sans-serif`).
++ Nach Kommata, die Werte/Eigenschaften separieren, wird jeweils ein Leerzeichen gesetzt (e.g. `font-family: helvetica, arial, sans-serif`).
 + Jeder Deklarationsblock wird durch **1** Leerzeile abgesetzt.
 
 Beispiel der oben genannten Regeln:
@@ -265,7 +265,7 @@ Der Einsatz von (hier) SASS erfordert weitere Regeln, die verbindlich sind.
 
 + `@extend`, `@include` werden am Anfang einer Deklaration notiert (in dieser Reihenfolge).
 + Notierungen von SASS eigenen Statements (`@`) werden mit **1** Leerzeile von nachfolgenden Deklarationen abgesetzt. 
-+ Um Konflikte mit ggf. Dritt-Libraries zu vermeiden, werden eigene Mixins und Funktionen mit einem Namespace-Prefix deklariert (Wahl des Prefix projektabhängig; im Beispiel wird `x-` als Prefix für die Funktion `calculate-context` genutzt).
++ Um Konflikte mit Dritt-Libraries zu vermeiden, werden eigene Mixins und Funktionen mit einem Namespace-Prefix deklariert (Wahl des Prefix projektabhängig; im Beispiel wird `x-` als Prefix für die Funktion `calculate-context` genutzt).
 
 ```scss
 .selektor {
