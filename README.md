@@ -114,7 +114,7 @@ Ist es sinnvoll/notwendig einzelne Deklarationen zu erklären, werden sie wie im
 }
 ```
 
-Oftmals ist eine ausführliche Kemmentierung einer Deklaration nicht notwendig, sondern verdeutlich nur den Kontext des Codes. In dem Fall wird ein einzeiliger Kommentar verwendet.
+Oftmals ist die ausführliche Kemmentierung einer Deklaration nicht notwendig, sondern verdeutlich nur den Kontext des Codes. In diesen Fall wird ein einzeiliger Kommentar verwendet.
 
 Beispiel eines einfachen Kommentars:
 
@@ -140,7 +140,7 @@ Die Dokumentation von Sourcecode, der im Living Style Guide abgebildet werden so
 Kommentare im Markup sollten generell sparsam verwendet werden, da diese nicht entfernt werden im Deployment und durch korrekte Editoreinstellung (Einzug) i.d.R. schnell erkannt werden kann, wo ein Element beginnt und wo es endet. Für das visuelle Erfassen von Zusammenhängen ist es dennoch sinnvoll, das Ende eines größeren Markup-Blocks durch einen Kommentar auszuzeichnen.
 
 + Ein Kommentar beginnt mit einem Schrägstrich (Synomym für das Ende eines Blocks).
-+ Ist keine Klassendeklaration vorhanden, wird der Tag-Name notiert.
++ Ist keine Klassendeklaration vorhanden, wird der Element-Name notiert.
 + Hat das Element einen Klassennamen, wird dieser notiert.
 
 ```html
@@ -164,10 +164,10 @@ Kommentare im Markup sollten generell sparsam verwendet werden, da diese nicht e
 
 Grundsätzliche Regeln:
 
-+ Eine öffnende geschweifte Klammer wird in der gleichen Zeile wie der selector notiert.
++ Eine öffnende geschweifte Klammer wird in der gleichen Zeile wie der Selektor notiert.
 + Setze einen einfachen Leerschritt zwischen Deklaration und öffenden geschweiften Klammer.
-+ Eine schließende geschweifte Klammer einer Deklaration steht in eigener Zeile und gleichen Spalte wie der öffenende selector. 
-+ Jeder selector in selectorketten wird in einer eigenen Zeile notiert.
++ Eine schließende geschweifte Klammer einer Deklaration steht in eigener Zeile und gleichen Spalte wie der öffenende Selektor. 
++ Jeder Selektor in Selektorketten wird in einer eigenen Zeile notiert.
 + Jede Deklaration wird mit einem Semikolon abgeschlossen.
 + Setze zwischen Attribut und Wert einer Deklaration ein Leerzeichen (e.g. `margin: 1em`).
 + Nutze ausschließlich HEX Angaben in Farbdeklarationen in der keine Transparenz erforderlich ist.
@@ -182,8 +182,8 @@ Grundsätzliche Regeln:
 Beispiel der oben genannten Regeln:
 
 ```css
-.selector-1,
-.selector-2 {
+.selektor-1,
+.selektor-2 {
     display: block;
     margin: 0; 
     color: #fff;
@@ -198,7 +198,7 @@ input[type="text"] {
 
 ##### Ausnahme: ######
 
-+ Besteht die Deklaration aus lediglich eines Attribut/Werte-Paars **und** ist Teil einer zusammenhängenden Gruppe von Deklarationen, werden selector, geschweifte Klammer und die Attribut/Werte Deklaration jeweils in **1** Zeile notiert. Geschweifte Klammern und Deklaration werden durch einen Leerschritt voneinander abgesetzt.
++ Besteht die Deklaration aus lediglich eines Attribut/Werte-Paars **und** ist Teil einer zusammenhängenden Gruppe von Deklarationen, werden selektor, geschweifte Klammer und die Attribut/Werte Deklaration jeweils in **1** Zeile notiert. Geschweifte Klammern und Deklaration werden durch einen Leerschritt voneinander abgesetzt.
 
 Beispiel der oben genannten Regeln:
 
@@ -218,7 +218,7 @@ Deklarationen werden in Blöcken zusammenhängender Eigenschaften notiert.
 + Zwischen den einzelnen Eigenschaftsblöcken wird **1** Leerzeile gesetzt.
 
 ```css
-.selector {
+.selektor {
     /* Positionierung */
     position: relative;
     z-index: 1;
@@ -247,16 +247,16 @@ Deklarationen werden in Blöcken zusammenhängender Eigenschaften notiert.
 
 #### Präprozessoren ####
 
-Der Einsatz von (hier) SASS erfordert einige weitere Regeln, die verbindlich sind.  
+Der Einsatz von (hier) SASS erfordert weitere Regeln, die verbindlich sind.  
 
-+ Vermeide Verschachtelungen wo immer es möglich ist.
++ **Vermeide Verschachtelungen** wo immer es möglich ist.
 + Verschachtelung (Nesting) wird auf max. **2** Ebenen begrenzt.
 + Verschachtelte Deklaration werden vor und nach der Notation durch **1** Leerzeile von dem umgebenden Code abgesetzt.
 ```scss
-.selector {
+.selektor {
     color: red;
 
-    .selector-nested {
+    .selektor-nested {
         ...
     }
     
@@ -265,10 +265,10 @@ Der Einsatz von (hier) SASS erfordert einige weitere Regeln, die verbindlich sin
 
 + `@extend`, `@include` werden am Anfang einer Deklaration notiert (in dieser Reihenfolge).
 + Notierungen von SASS eigenen Statements (`@`) werden mit **1** Leerzeile von nachfolgenden Deklarationen abgesetzt. 
-+ Um Konflikte mit ggf. Dritt-Libraries zu vermeiden, werden eigene Mixins und Funktionen mit einem Namespace-Prefix deklariert (Wahl des Prefix projektabhängig; im Beispiel wird `x-` als Prefix genutzt).
++ Um Konflikte mit ggf. Dritt-Libraries zu vermeiden, werden eigene Mixins und Funktionen mit einem Namespace-Prefix deklariert (Wahl des Prefix projektabhängig; im Beispiel wird `x-` als Prefix für die Funktion `calculate-context` genutzt).
 
 ```scss
-.selector {
+.selektor {
     @extend %button;
     @include font-size(16px);
 
@@ -281,11 +281,11 @@ Der Einsatz von (hier) SASS erfordert einige weitere Regeln, die verbindlich sin
 <a name="format-markup"></a>
 ### HTML/Markup ###
 
-Ein paar wenige Regeln gibt es auch für die Notation von Klassen innerhalb des Markups und Abständen zwischen Markup-Blöcken.
+Folgende Regeln gelten für die Notation von Klassen innerhalb des Markups und Abständen zwischen Markup-Blöcken.
 
 + Der schließende Tag eines HTML-Elementes wird in der gleichen Zeile wie der öffnende Tag notiert.
-+ Nach dem öffnenden Tag eines HTML-Elementes werden die Inhalte i.d.R. in einer neuen Zeile begonnen. Ausnahmen sind Elemente, die keine weiteren Elemente enthalten (bspw. `<a>`).
-+ Attribute im Markup werden immer in doppelte Anführungszeichen gesetzt.
++ Nach dem öffnenden Tag eines HTML-Elementes werden die Inhalte in einer neuen Zeile begonnen. Ausnahmen sind Elemente, die keine weiteren Elemente enthalten (bspw. `<a>`).
++ Attribute im Markup werden immer in **doppelte** Anführungszeichen gesetzt.
 ```html
 <div class="c-vehicle-list">
     <ul>
