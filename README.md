@@ -5,11 +5,13 @@
 1. [Prämissen](#praemisse)
 2. [Editoreinstellungen](#editoreinstellungen)
 3. [Kommentare](#kommentare)
-    - [CSS](#kommentare-css)
+    - [CSS/SCSS](#kommentare-css)
     - [HTML/Markup](#kommentare-markup)
 4. [Format](#format)
     - [CSS](#format-css)
+    - [Präprozessoren (SASS)](#format-scss)
     - [HTML/Markup](#format-markup)
+5. [Namenkonventionen](#naming)
 
 ---
 
@@ -29,9 +31,9 @@ Die (meisten) Einstellungen gelten übergreifend für CSS wie auch HTML/Markup.
 Grundsätzliche Einstellungen/Regeln:
 
 + Für Zeileneinzüge werden **Spaces** genutzt.
-+ Die Einrückungsweite wird auf **4** gesetzt.
++ Die Einrückungsweite wird auf **2** gesetzt.
 + Vermische *niemals* Leerzeichen mit Tabs. 
-+ Die maximale Zeilenlänge wird auf **80** Zeichen begrenzt (*nur CSS*).
++ Die maximale Zeilenlänge wird auf **80** Zeichen begrenzt (*nur (S)CSS*).
 + Deklarationen, die mehr Zeichen in einer Zeile beinhalten, werden *niemals* per Hand umgebrochen.
 
 ### EditorConfig ###
@@ -53,7 +55,7 @@ Grundsätzliche Regeln:
 + Ganze Kommentar/Code Blocks werden durch **2** Leerzeilen voneinander abgesetzt.
 
 <a name="kommentare-css"></a>
-### CSS ###
+### CSS/SCSS ###
 
 Das Format von Kommentare richtet sich danach, ob der kommentierte Code **allein der Inline Dokumentation** dient oder für die **Dokumentation im Living Style Guide** relevant ist.
 
@@ -70,27 +72,8 @@ Beispiel eines ausführlichen Kommentars:
  * Ausführliche Beschreibung, die detailiert die Aufgabe des Codes
  * erklärt. Links und Beispiel Markup sind oft hilfreich oder gar
  * notwendig. Variablen oder/und Klassennamen werden mit Backticks
- * versehen (Bsp. `.example`).
- *
- * Example HTML:
- *
- * <ul class="example">
- * 		<li></li>
- *      ...
- * </ul>
- */
-```
-
-Ist es sinnvoll/notwendig einzelne Deklarationen zu erklären, werden sie wie im nachfolgenden Beispiel kommentiert.
-
-```css
-/**
- * Einzeilige Kurzbeschreibung
- * 
- * Ausführliche Beschreibung, die detailiert die Aufgabe des Codes
- * erklärt. Links und Beispiel Markup sind oft hilfreich oder gar
- * notwendig. Variablen oder/und Klassennamen werden mit Backticks
- * versehen (Bsp. `.example`).
+ * versehen (Bsp. `.example`). Ist die Erläuterung einzelner Deklarationen
+ * sinnvoll, werden sie explizit kommentiert.
  *
  * Example HTML:
  *
@@ -114,7 +97,7 @@ Ist es sinnvoll/notwendig einzelne Deklarationen zu erklären, werden sie wie im
 }
 ```
 
-Oftmals ist die ausführliche Kemmentierung einer Deklaration nicht notwendig, sondern verdeutlich nur den Kontext des Codes. In diesen Fall wird ein einzeiliger Kommentar verwendet.
+Oftmals ist die ausführliche Kommentierung einer Deklaration nicht notwendig, sondern soll nur den Kontext verdeutlichen. In diesen Fall wird ein einzeiliger Kommentar verwendet.
 
 Beispiel eines einfachen Kommentars:
 
@@ -165,11 +148,12 @@ Kommentare im Markup sollten generell sparsam verwendet werden, da diese nicht e
 Grundsätzliche Regeln:
 
 + Eine öffnende geschweifte Klammer wird in der gleichen Zeile wie der Selektor notiert.
-+ Setze einen einfachen Leerschritt zwischen Deklaration und öffenden geschweiften Klammer.
++ Setze einen einfachen Leerschritt zwischen Selektor und öffnender geschweiften Klammer.
 + Eine schließende geschweifte Klammer einer Deklaration steht in eigener Zeile und gleichen Spalte wie der öffenende Selektor. 
 + Jeder Selektor in Selektorketten wird in einer eigenen Zeile notiert.
 + Jede Deklaration wird mit einem Semikolon abgeschlossen.
 + Setze zwischen Attribut und Wert einer Deklaration ein Leerzeichen (e.g. `margin: 1em`).
++ Werte mit führender Null werden explizit ausgeschrieben (e.g. `margin: 0.1em`).
 + Nutze ausschließlich HEX Angaben in Farbdeklarationen in der keine Transparenz erforderlich ist.
 + Nutze ausschließlich das RGBA Farbmodell, wenn Transparenzen erforderlich sind. 
 + Nutze durchgehend Kleinschreibung und Shorthand Schreibweise bei HEX Angaben (e.g. `#fff`).
@@ -244,30 +228,64 @@ Deklarationen werden in Blöcken zusammenhängender Eigenschaften notiert.
 ```
 
 
-
-#### Präprozessoren ####
+<a name="format-scss"></a>
+### Präprozessoren (SASS) ###
 
 Der Einsatz von (hier) SASS erfordert weitere Regeln, die verbindlich sind.  
 
-+ **Vermeide Verschachtelungen** wo immer es möglich ist.
-+ Verschachtelung (Nesting) wird auf max. **2** Ebenen begrenzt.
++ Verschachtelung (Nesting) ist **nicht erlaubt**. 
++ *Ausnahme*: Deklarationen, die Pseudo-Selektoren für das Elternelement referenzieren.
 + Verschachtelte Deklaration werden vor und nach der Notation durch **1** Leerzeile von dem umgebenden Code abgesetzt.
-```scss
-.selektor {
-    color: red;
-
-    .selektor-nested {
-        ...
-    }
-    
-}
-```
-
++ Die Erweiterung einer Deklaration (per `@extend`) ist nur mit [SASS-Placeholdern](http://thesassway.com/intermediate/understanding-placeholder-selectors) zulässig.
 + `@extend`, `@include` werden am Anfang einer Deklaration notiert (in dieser Reihenfolge).
 + Notierungen von SASS eigenen Statements (`@`) werden mit **1** Leerzeile von nachfolgenden Deklarationen abgesetzt. 
 + Um Konflikte mit Dritt-Libraries zu vermeiden, werden eigene Mixins und Funktionen mit einem Namespace-Prefix deklariert (Wahl des Prefix projektabhängig; im Beispiel wird `x-` als Prefix für die Funktion `calculate-context` genutzt).
 
 ```scss
+
+/* Verschachtelung mit Pseudo-Selektoren */
+a {
+  text-decoration: none;
+
+  &:hover, &:active, &:focus {
+    text-decoration: underline;
+  }
+
+}
+
+
+/* BEM Notation */
+
+// FALSCH
+.component {
+  .component__child {
+    ...
+  }
+}
+
+// RICHTIG
+.component {
+  ...
+}
+.component__child {
+  ...
+}
+
+
+/* Einsatz von @extend */
+
+// FALSCH
+.selektor {
+    @extend .button;
+}
+
+// RICHTIG
+.selektor {
+    @extend %button;
+}
+
+
+/* Plazierung/Reihenfolge von @extend/@include Direktiven */
 .selektor {
     @extend %button;
     @include font-size(16px);
@@ -276,6 +294,7 @@ Der Einsatz von (hier) SASS erfordert weitere Regeln, die verbindlich sind.
     ...
 }
 ```
+
 
 
 <a name="format-markup"></a>
@@ -335,4 +354,11 @@ Folgende Regeln gelten für die Notation von Klassen innerhalb des Markups und A
 ```
 
 
+---
+
+
+<a name="naming"></a>
+## 5. Namenkonventionen ##
+
+...
 
